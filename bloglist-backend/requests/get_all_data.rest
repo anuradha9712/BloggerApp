@@ -1,0 +1,61 @@
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+    "username":"harshita2612",
+    "name":"Anu",
+    "password":"123456789"
+}
+
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+    "username":"Anuradha2612",
+    "password":"123456789"
+}
+
+##
+POST http://localhost:3003/api/blogs 
+Content-Type: application/json
+
+{
+"title": "title1",
+"author": "mayank",
+"url":"http://localhost/blfog",
+"likes":1000,
+"userId":"5e6e66655a7110349c0649a1"
+}
+
+##
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+    "username":"Anuradha2612",
+    "name":"Anu",
+    "password":"123456789"
+}
+
+##
+
+GET http://localhost:3003/api/blogs
+
+##
+
+PUT http://localhost:3003/api/blogs/5e573047dadcd64e90ae5ac1 
+Content-Type: application/json
+
+{
+"title": "harshita",
+"author": "myself",
+"url":"http://localhost/blfog",
+"likes":10000
+}
+
+##
+
+DELETE http://localhost:3003/api/blogs/5e572fba5779ef2778fb1202
+
+##
+
