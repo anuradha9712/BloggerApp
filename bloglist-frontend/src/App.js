@@ -6,7 +6,7 @@ import Togglable from './components/Togglable'
 import LoginForm from './components/LoginForm'
 import AddBlogForm from './components/AddBlogForm'
 import Blog from './components/Blog'
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 import './App.css'
 
@@ -136,20 +136,20 @@ const App = () => {
 
     return (
         <div className="outerDiv">
-            {errorMessage !== null ? 
-                <Notification message={errorMessage} /> :null
+            {errorMessage !== null ?
+                <Notification message={errorMessage} /> : null
             }
-            
+
             {user === null ?
                 <LoginForm onlogin={handleLogin} onsignup={handleSignup} /> :
                 (
                     <div>
                         <h3 style={{ textAlign: "center" }}>Blogger-App</h3>
-                        <div className="row form" style={{float:"right"}}>
+                        <div className="row form" style={{ float: "right" }}>
                             <p> Hello!! {user.name} logged in  {user.username}</p> &nbsp; &nbsp;
                             <Button variant="secondary" type="submit" id="logout" onClick={handleLogout}>logout</Button>
-                        </div><br/> <br/>
-                        <Togglable buttonLabel='New Note' ref={createBlogFormRef}>
+                        </div><br /> <br />
+                        <Togglable buttonLabel='New Blog' ref={createBlogFormRef}>
                             <h2>Create a new Blog</h2>
                             <AddBlogForm onBlogAdded={handleNewBlog} />
                         </Togglable>

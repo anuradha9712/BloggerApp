@@ -20,7 +20,7 @@ const Togglable = React.forwardRef((props, ref) => {
   return (
     <div  className="col-md-6 form">
       <div style={hideWhenVisible}>
-        <Button variant="primary" type="submit" id="create-button" onClick={toggleVisibility}>{props.buttonLabel}</Button>
+        <Button style={{backgroundColor:'#1aebb7'}} variant="primary" type="submit" id="create-button" onClick={toggleVisibility}>{props.buttonLabel}</Button>
       </div>
 
       <div style={showWhenVisible} className="togglableContent">
