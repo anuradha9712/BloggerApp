@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.0",
     "mocha": "^7.1.1",
     "mocha-junit-reporter": "^1.23.3",
