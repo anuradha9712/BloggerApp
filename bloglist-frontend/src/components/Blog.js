@@ -2,8 +2,7 @@ import React from 'react'
 import blogService from '../services/blogs'
 import PropTypes from 'prop-types';
 import { Button,Card } from 'react-bootstrap';
-
-
+import ReactHtmlParser from 'react-html-parser';
 
 
 const Blog = ({ blog, setUpdate, user }) => {
@@ -39,7 +38,8 @@ const Blog = ({ blog, setUpdate, user }) => {
                         <Card.Subtitle className="mb-2 text-muted">added by {blog.author}</Card.Subtitle>
                         <Card.Text>
                             
-                            <Card.Link href="#">{blog.url}</Card.Link> <br/>
+                            {/* <Card.Link href="#">{blog.url}</Card.Link> <br/> */}
+                            {ReactHtmlParser(blog.url)}
 
                             ❤️Likes: {blog.likes} &nbsp; &nbsp;
                             <Button variant="info" onClick={incLikes} type="submit" id="like-button">Like</Button><br />

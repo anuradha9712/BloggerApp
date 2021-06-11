@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useField } from '../hooks';
 import PropTypes from 'prop-types';
 import { Button, Form } from 'react-bootstrap';
@@ -22,10 +22,10 @@ const AddBlogForm = ({ onBlogAdded }) => {
       // url: url.value
       url: content
     })
-    
+
     title.reset();
     author.reset();
-    url.reset();
+    // url.reset();
   }
 
   const handleChange = (value) => {
@@ -82,20 +82,35 @@ const AddBlogForm = ({ onBlogAdded }) => {
           <Form.Control type="text" {...author} reset="" placeholder="Enter Author" />
         </Form.Group>
 
-        <Form.Group controlId="url">
+        {/* <Form.Group controlId="url">
           <Form.Label>Content</Form.Label>
-          {/* <Form.Control type="text" {...url} reset="" placeholder="Enter URL" /> */}
-          <ReactQuill
-            value=''
-            theme="snow"
-            onChange={handleChange}
-            modules={modules}
-            formats={formats}
-          />
-        </Form.Group>
+          <Form.Control type="text" {...url} reset="" placeholder="Enter URL" />
+        </Form.Group> */}
+
+
+        {/* <ReactQuill
+          // value={content.rawValue || content.value || ''}
+          value='<h1>hello world</h1>'
+          onChange={rawValue => {
+            const cleanedValue = rawValue.replace(/<p><br><\/p>/g, '');
+            // setContent({ rawValue, value: cleanedValue });
+            handleChange(cleanedValue);
+          }}
+        /> */}
+
+       <ReactQuill
+        value={content}
+        theme="snow"
+        onChange={handleChange}
+        modules={modules}
+        formats={formats}
+      /> 
+
 
         <Button variant="primary" type="submit" id="create-button">Create</Button>
       </Form>
+
+
     </div>
   )
 }
